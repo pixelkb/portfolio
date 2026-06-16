@@ -210,6 +210,16 @@ const Skills = () => {
       className="h-screen min-h-[650px] lg:min-h-[720px] flex flex-col justify-center relative overflow-hidden bg-black select-none py-10 lg:py-0"
     >
       <style>{`
+        @media (max-height: 780px) {
+          #skills {
+            height: auto !important;
+            min-height: 100vh !important;
+            overflow: visible !important;
+            padding-top: 6rem !important;
+            padding-bottom: 6rem !important;
+          }
+        }
+
         /* GPU-accelerated base states for cards */
         .skill-card {
           opacity: 0;
