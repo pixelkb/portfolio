@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.heading-purple-glow {
+  background: linear-gradient(135deg, #7B2FF7 0%, #9249F7 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(123, 47, 247, 0.35)) drop-shadow(0 0 30px rgba(123, 47, 247, 0.15));
+}
+
+@keyframes button-neon-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(123, 47, 247, 0.15), 0 0 10px rgba(123, 47, 247, 0.08);
+    border-color: rgba(123, 47, 247, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(123, 47, 247, 0.5), 0 0 25px rgba(123, 47, 247, 0.25);
+    border-color: rgba(123, 47, 247, 0.8);
+  }
+}
+.animate-pulse-glow {
+  animation: button-neon-glow 4s ease-in-out infinite;
+}
+
+
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #080808;
+  --accent-primary: #7B2FF7;
+  --accent-secondary: #9249F7;
+  --accent-tertiary: #A855F7;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7B2FF7, #9249F7);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #A855F7, #7B2FF7);
+  border-radius: 10px;
+}
+
+::selection {
+  background: rgba(123, 47, 247, 0.35);
+  color: #ffffff;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.glass-card {
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7B2FF7 0%, #9249F7 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(
+    45deg,
+    #7B2FF7,
+    #9249F7,
+    #A855F7,
+    #6D25E6,
+    #9249F7,
+    #7B2FF7
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes scanLine {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.18),
+              0 0 40px rgba(123, 47, 247, 0.12),
+              0 0 60px rgba(123, 47, 247, 0.08);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(123, 47, 247, 0.22); }
+  50% { box-shadow: 0 0 40px rgba(123, 47, 247, 0.35), 0 0 60px rgba(123, 47, 247, 0.22); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 24px;
+  background: #7B2FF7;
+  margin-left: 4px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blobMove {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.9); }
+  75% { transform: translate(20px, 30px) scale(1.05); }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: blobMove 15s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: #7B2FF7;
+  top: -100px;
+  left: -100px;
+}
+
+.blob-2 {
+  width: 350px;
+  height: 350px;
+  background: #9249F7;
+  top: 50%;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.blob-3 {
+  width: 300px;
+  height: 300px;
+  background: #5314B3;
+  bottom: -50px;
+  left: 30%;
+  animation-delay: -10s;
+}
+
+.skill-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #7B2FF7, #A855F7);
+  border-radius: 10px;
+  transform-origin: left;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 640px) {
+  .container-custom { padding: 0 40px; }
+}
+
+@media (min-width: 1024px) {
+  .container-custom { padding: 0 60px; }
+}
+
+/* Contact Form Hover & Focus Animations */
+.contact-form-container {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(15, 15, 18, 0.45);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform-origin: center;
+}
+
+.contact-form-container:hover {
+  border-color: #7B2FF7;
+  background: rgba(22, 22, 28, 0.55);
+  transform: scale(1.01);
+  box-shadow:
+    0 0 15px rgba(123, 47, 247, 0.18),
+    0 0 35px rgba(123, 47, 247, 0.12),
+    0 0 60px rgba(123, 47, 247, 0.08);
+}
+
+.contact-form-container:focus-within {
+  border-color: #7B2FF7;
+  background: rgba(22, 22, 28, 0.55);
+  transform: scale(1.01);
+  box-shadow:
+    0 0 20px rgba(123, 47, 247, 0.25),
+    0 0 45px rgba(123, 47, 247, 0.18),
+    0 0 75px rgba(123, 47, 247, 0.12);
+}
+
+.input-field input,
+.input-field textarea {
+  caret-color: #7B2FF7;
+}
+
+.input-field input:focus::placeholder,
+.input-field textarea:focus::placeholder {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.input-field input::placeholder,
+.input-field textarea::placeholder {
+  transition: opacity 0.3s ease;
+}
+
