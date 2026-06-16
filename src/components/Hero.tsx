@@ -128,8 +128,8 @@ const Hero = () => {
               </MotionLink>
 
               <motion.a
-                href="/resume.jpg"
-                download="Kritika_Bhatt_Resume.jpg"
+                href="/resumee.pdf"
+                download="Kritika_Bhatt_Resume.pdf"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2.5 sm:px-6 sm:py-3 border border-accent-500/50 rounded-xl text-accent-300 font-semibold flex items-center gap-2 hover:bg-accent-500/10 hover:border-accent-500 transition-all cursor-pointer text-sm sm:text-base whitespace-nowrap"

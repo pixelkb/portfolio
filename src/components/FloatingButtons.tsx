@@ -19,8 +19,8 @@ const FloatingButtons = () => {
     {
       icon: <Download className="w-5 h-5" />,
       label: 'Download Resume',
-      href: '/resume.jpg',
-      download: 'Kritika_Bhatt_Resume.jpg',
+      href: '/resumee.pdf',
+      download: 'Kritika_Bhatt_Resume.pdf',
       gradient: 'from-accent-500 to-accent-700',
     },
     {

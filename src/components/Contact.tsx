@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
-import { Loader2, Copy, Check, Linkedin, Github, Instagram, ArrowRight } from 'lucide-react';
+import { Loader2, Copy, Check, Linkedin, Github, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -162,15 +162,23 @@ const Contact = () => {
     setStatus('idle');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
+          name,
+          email,
+          message,
+          subject: `New Portfolio Message from ${name}`
+        }),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+      if (response.ok && data.success) {
         setStatus('success');
         setFormData({ name: '', email: '', message: '' });
       } else {
