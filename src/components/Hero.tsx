@@ -66,7 +66,7 @@ const Hero = () => {
       <motion.div
         className="container-custom relative z-10 w-full"
       >
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 pt-20 lg:pt-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-20 pt-28 pb-20 lg:py-0">
           {/* Left Side - Content */}
           <motion.div
             variants={containerVariants}
@@ -128,8 +128,8 @@ const Hero = () => {
               </MotionLink>
 
               <motion.a
-                href="/resume.jpg"
-                download="Kritika_Bhatt_Resume.jpg"
+                href="/resumee.pdf"
+                download="Kritika_Bhatt_Resume.pdf"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-5 py-2.5 sm:px-6 sm:py-3 border border-accent-500/50 rounded-xl text-accent-300 font-semibold flex items-center gap-2 hover:bg-accent-500/10 hover:border-accent-500 transition-all cursor-pointer text-sm sm:text-base whitespace-nowrap"
@@ -253,7 +253,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
       >
         <Link to="skills" smooth={true} duration={500} offset={-80}>
           <motion.div

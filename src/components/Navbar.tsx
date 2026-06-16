@@ -62,7 +62,7 @@ const Navbar = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-accent-400 via-accent-500 to-accent-700 flex items-center justify-center text-lg lg:text-xl font-bold text-white shadow-lg"
+                className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-black border border-accent-500/50 flex items-center justify-center text-lg lg:text-xl font-bold text-white shadow-lg"
               >
                 KB
               </motion.div>

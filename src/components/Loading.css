@@ -1,0 +1,296 @@
+/* Loading Screen Styles - Restored to Previous Custom Premium Design */
+
+.loading-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 110;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .loading-header {
+    padding: 0 48px;
+  }
+}
+
+.loader-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+  pointer-events: auto;
+  letter-spacing: 0.1em;
+  transition: opacity 0.3s ease;
+}
+
+.loader-title:hover {
+  opacity: 0.8;
+}
+
+.loaderGame {
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.loaderGame.loader-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.loaderGame-container {
+  position: relative;
+  width: 130px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 0 4px;
+  overflow: hidden;
+}
+
+.loaderGame-in {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.loaderGame-line {
+  width: 1px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.5px;
+}
+
+.loaderGame-ball {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #7B2FF7;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #7B2FF7, 0 0 15px #7B2FF7;
+  animation: bounceBall 2.5s ease-in-out infinite;
+  top: 50%;
+  margin-top: -3px;
+}
+
+@keyframes bounceBall {
+  0%, 100% {
+    left: 6px;
+  }
+  50% {
+    left: calc(100% - 12px);
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.loading-marquee {
+  position: absolute;
+  width: 100%;
+  opacity: 0.03;
+  font-family: 'Syne', sans-serif;
+  font-size: 8vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.loading-marquee span {
+  display: inline-block;
+  padding-right: 2rem;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.loading-wrap {
+  position: relative;
+  z-index: 5;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease;
+}
+
+.loading-wrap.loading-clicked {
+  transform: scale(0.85) rotate(4deg);
+  opacity: 0;
+  filter: blur(12px);
+}
+
+.loading-hover {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle 150px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(123, 47, 247, 0.12),
+    transparent 85%
+  );
+  pointer-events: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.loading-button {
+  position: relative;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(10, 10, 12, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 
+    0 15px 45px rgba(0, 0, 0, 0.6), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.loading-wrap:hover .loading-button {
+  border-color: rgba(123, 47, 247, 0.25);
+  box-shadow: 
+    0 15px 45px rgba(123, 47, 247, 0.06), 
+    0 0 25px rgba(123, 47, 247, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.loading-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.loading-content {
+  z-index: 3;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #737373;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.loading-content-in span {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 6px;
+  letter-spacing: -0.02em;
+}
+
+.loading-box {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  animation: rotateBox 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateBox {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-content2 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.loading-content2 span {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px; /* Shrunk from 24px to fit inside circle boundary */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #ffffff 40%, #7B2FF7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* State when percentage is 100% complete */
+.loading-button.loading-complete {
+  border-color: #7B2FF7;
+  box-shadow: 
+    0 0 35px rgba(123, 47, 247, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.loading-button.loading-complete .loading-container {
+  opacity: 0;
+  transform: scale(0.85);
+  pointer-events: none;
+}
+
+.loading-button.loading-complete .loading-content2 {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}

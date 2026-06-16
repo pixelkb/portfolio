@@ -31,7 +31,7 @@ const Footer = () => {
               duration={500}
               className="inline-flex items-center gap-2 cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-500 via-accent-600 to-accent-700 flex items-center justify-center text-white font-bold">
+              <div className="w-10 h-10 rounded-full bg-black border border-accent-500/50 flex items-center justify-center text-white font-bold">
                 KB
               </div>
               <span className="text-xl font-bold text-white">Kritika Bhatt</span>

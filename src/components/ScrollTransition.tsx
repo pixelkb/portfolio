@@ -33,10 +33,10 @@ const ScrollTransition = () => {
         className="absolute top-0 left-0 w-full h-screen pointer-events-none z-0"
       />
 
-      {/* Pinned Hero Section (About Me) */}
+      {/* Pinned Hero Section (About Me) - scrollable internally if it overflows */}
       <motion.div
         style={{ scale, filter, opacity }}
-        className="sticky top-0 h-screen w-full z-10 overflow-hidden bg-black"
+        className="sticky top-0 h-screen w-full z-10 overflow-y-auto no-scrollbar bg-black"
       >
         <Hero />
       </motion.div>
